@@ -11,7 +11,6 @@ html, body{
     background: linear-gradient(black, darkslategray);
     background-repeat: no-repeat;
     background-size: cover;
-    -webkit-font-smoothing: antialiased;
 }
 
 section{
@@ -28,22 +27,27 @@ section.visible{
 }
 
 h1{
-    padding-top: 15%;
+    padding-top: 20%;
     padding-bottom: 1%;
     color: #ffffff;
     font-size: 5em;
 }
 
-form {
+form{
     line-height: 130%;
     display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+::placeholder{
     text-align: center;
 }
 
 .form-email-input{
     width: 30%;
     border-style: hidden;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .form-submit-button {
@@ -51,7 +55,7 @@ form {
     padding: 10px 0 11px;
     font-size: 1.5em;
     text-transform: uppercase;
-    background: #fb7358;
+    background: #d12705;
     cursor: pointer;
     border-style: hidden;
     text-shadow: none;
