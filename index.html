@@ -4,6 +4,9 @@
     <head>
         <title>Org name placeholder</title>
         <link rel="stylesheet" href="styles.css" type="text/css">
+        <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+        <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+        <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="main.js"></script>
     </head>
@@ -16,7 +19,7 @@
         <section id ="contact">
             <h1>Sign up for our mailing list</h1>
             <form name="contact-form" onsubmit="alert('hi')">
-                <input type="text" class="form-email-input" required="true" name="email" placeholder="Enter your email"/>
+                <input type="email" class="form-email-input" required="true" name="email" placeholder="Enter your email"/>
                 <input type="submit" class="form-submit-button" name="Submit" value="Submit"/>
             </form>
         </section>
