@@ -1,6 +1,6 @@
-$(document).on("scroll", function (){
+$(document).on("scroll", function () {
     var pageTop = $(document).scrollTop();
-    var pageBottom = pageTop + $(window).height()*.5;
+    var pageBottom = pageTop + $(window).height() * .5;
     var tags = $("section");
 
     for (let i = 0; i < tags.length; i++) {
@@ -8,18 +8,26 @@ $(document).on("scroll", function (){
         if ($(tag).position().top < pageBottom) {
             $(tag).addClass("visible");
         }
-        else{
+        else {
             $(tag).removeClass("visible");
         }
     }
 });
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzmhek8WcamszFaAwPnlZwUjxYZcQO5FxxJq0aGElQfG1CbUW8/exec';
-const form = document.forms['submit-to-google-sheet'];
+var url = "https://script.google.com/macros/s/AKfycbwVOs1dFDvBoaUnTVPwJFfTE9s3zs_DMM5pe6dUKlIAnUUEx2It/exec";
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => console.log('Success!', response))
-    .catch(error => console.error('Error!', error.message))
-});
+$(document).ready(function () {
+    $('#contact-form').on("submit", function (e) {
+        e.preventDefault();
+        var jqxhr = $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json",
+            data: $("#contact-form").serialize(),
+            success: function (res) {
+                console.log(res);
+            }
+        })
+        $("#thanks-message").addClass("visible");
+    })
+})

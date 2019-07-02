@@ -33,6 +33,12 @@ h1{
     font-size: 5em;
 }
 
+h2{
+    padding-top: 3%;
+    color: #ffffff;
+    font-size: 3em;
+}
+
 form{
     line-height: 130%;
     display: flex;
@@ -44,18 +50,18 @@ form{
     text-align: center;
 }
 
-.form-email-input{
+#form-email-input{
     width: 30%;
     border-style: hidden;
     font-size: 1.5em;
 }
 
-.form-submit-button {
+#form-submit-button {
     margin: 0;
     padding: 10px 0 11px;
     font-size: 1.5em;
     text-transform: uppercase;
-    background: #d12705;
+    background: #ff8a76;
     cursor: pointer;
     border-style: hidden;
     text-shadow: none;
@@ -63,6 +69,16 @@ form{
     color: #ffffff;
 }
 
-.form-submit-button:hover {
+#form-submit-button:hover {
     opacity: .8;
+}
+
+#thanks-message {
+    opacity: 0;
+}
+
+#thanks-message.visible {
+    opacity: 1;
+    transform: translate(0, -25%);
+    transition: all 2s;
 }
